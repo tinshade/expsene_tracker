@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Add New Expense'),
+        elevation: 50,
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+        actionsAlignment: MainAxisAlignment.spaceBetween,
         actions: [
           MaterialButton(
             onPressed: cancel,
