@@ -2,7 +2,7 @@
 
 A simple, minimal, offline expense tracker app with quick insights on your monthly and weekly expenditure at a glance!
 Made with Flutter <3
-![2 Items](./screenshots/2Items.png)
+![Home](./screenshots/main.png)
 
 # Screenshots
 
