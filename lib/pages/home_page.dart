@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
             TextField(
               controller: newExpenseNameController,
               decoration: const InputDecoration(hintText: "What was it for?"),
+              textCapitalization: TextCapitalization.sentences,
             ),
 
             //Expense Amount
