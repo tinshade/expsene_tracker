@@ -31,7 +31,7 @@ class ExpenseTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           name,
-          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
         ),
         subtitle: Text(date),
         trailing: Text(amount),

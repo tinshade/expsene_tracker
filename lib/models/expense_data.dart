@@ -41,7 +41,6 @@ class ExpenseData extends ChangeNotifier {
     db.saveData(overallExpenseList);
   }
 
-  //TODO Finish this feature.
   //update expense
   void updateExpense(ExpenseItem existingExpense) {
     debugPrint("WIP");

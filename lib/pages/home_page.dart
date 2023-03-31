@@ -100,55 +100,41 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Colors.black,
               child: const Icon(Icons.add),
             ),
-            body: ListView(
+            body: Column(
               children: [
                 //Weekly Expenditure Graph
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 150.0),
+                  padding: const EdgeInsets.only(bottom: 10.0),
                   child: ExpenseSummary(startOfWeek: value.startOfWeekDate()),
                 ),
-                listOfExpenses(value, deleteExpense)
-                // Align(
-                //   alignment: Alignment.center,
-                //   child: Image.asset(
-                //     'assets/images/nothing.png',
-                //     scale: 3,
-                //   ),
-                // ),
-                // Align(
-                //   alignment: Alignment.center,
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: Text(
-                //       "Nothing to see here yet!",
-                //       style: TextStyle(
-                //           color: Colors.black54,
-                //           fontSize: 25,
-                //           fontWeight: FontWeight.w300),
-                //     ),
-                //   ),
-                // ),
-
-                // //List of expenses
-                // ListView.builder(
-                //     shrinkWrap: true,
-                //     physics: const NeverScrollableScrollPhysics(),
-                //     itemCount: value.getExpenseList().length,
-                //     itemBuilder: (context, index) => ExpenseTile(
-                //           name: value.getExpenseList()[index].item,
-                //           date: dateDisplayFormat(
-                //               value.getExpenseList()[index].date),
-                //           amount: '\$${value.getExpenseList()[index].amount}',
-                //           deleteTapped: ((p0) =>
-                //               deleteExpense(value.getExpenseList()[index])),
-                //         ))
+                const Padding(
+                  padding: EdgeInsets.only(top: 10.0),
+                  child: Divider(
+                    height: 2.0,
+                    color: Colors.grey,
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      listOfExpenses(value, deleteExpense),
+                    ],
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 55),
+                  child: Text(''),
+                ),
               ],
             ))));
   }
 }
 
 Widget listOfExpenses(ExpenseData value, Function deleteExpense) {
-  if (value.getExpenseList().length > 0) {
+  if (value.getExpenseList().isNotEmpty) {
     return ListView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -170,10 +156,10 @@ Widget listOfExpenses(ExpenseData value, Function deleteExpense) {
             scale: 3,
           ),
         ),
-        Align(
+        const Align(
           alignment: Alignment.center,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "",
               style: TextStyle(

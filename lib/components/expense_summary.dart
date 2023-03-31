@@ -94,7 +94,8 @@ class ExpenseSummary extends StatelessWidget {
                         TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
                 Text(
                     "\$${calculateWeekTotal(value, sunday, monday, tuesday, wednesday, thursday, friday, saturday).toStringAsFixed(2)}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20))
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20))
               ],
             ),
           ),
